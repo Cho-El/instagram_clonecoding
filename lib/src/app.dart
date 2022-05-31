@@ -6,13 +6,14 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WillPopScope( // 취소를 막는 기능
-        child: Scaffold(
-            appBar: AppBar(),
-            body: Container(),
-        ),
-        onWillPop: () async {
-          return false;
-        },
+      child: Scaffold(
+        appBar: AppBar(),
+        body: Container(),
+        bottomNavigationBar:,
+      ),
+      onWillPop: () async {
+        return false;
+      },
     ); // onWillpop 뒤로가기 눌렀을 때 호출
   }
 }
