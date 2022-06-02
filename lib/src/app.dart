@@ -9,15 +9,48 @@ class App extends StatelessWidget {
     return WillPopScope(
       // 취소를 막는 기능
       child: Scaffold(
-          appBar: AppBar(),
-          body: Container(),
-          bottomNavigationBar: BottomNavigationBar(
-            items: [
-              BottomNavigationBarItem(
-                  icon: ImageData('assets/images/add_friend_icon.jpg'),
-              )
-            ],
-          ),
+        appBar: AppBar(),
+        body: Container(),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          currentIndex: 0,
+          elevation: 0,
+          onTap: (value) {
+          },
+          items: [
+            BottomNavigationBarItem(
+              icon: ImageData(IconsPath.homeOff),
+              activeIcon: ImageData(IconsPath.homeOn),
+              label: 'home',
+            ),
+            BottomNavigationBarItem(
+              icon: ImageData(IconsPath.searchOff),
+              activeIcon: ImageData(IconsPath.searchOn),
+              label: 'home',
+            ),
+            BottomNavigationBarItem(
+              icon: ImageData(IconsPath.uploadIcon),
+              label: 'home',
+            ),
+            BottomNavigationBarItem(
+              icon: ImageData(IconsPath.activeOff),
+              activeIcon: ImageData(IconsPath.activeOn),
+              label: 'home',
+            ),
+            BottomNavigationBarItem(
+              icon: Container(
+                  width: 30,
+                  height: 30,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.grey,
+                  )),
+              label: 'home',
+            )
+          ],
+        ),
       ),
       onWillPop: () async {
         return false;
