@@ -64,9 +64,7 @@ class App extends GetView<BottomNavController> { // getview 안에 컨트롤러�
           ),
         ),
       ),
-      onWillPop: () async {
-        return false;
-      },
+      onWillPop: controller.willPopAction
     ); // onWillpop 뒤로가기 눌렀을 때 호출
   }
 }
