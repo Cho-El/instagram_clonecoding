@@ -43,6 +43,7 @@ class BottomNavController extends GetxController{
           okCallback: () {
             exit(0);
           },
+          cancelCallback: Get.back,
           title: '시스템',
         ),
       ); // !: null 허용 여부 제거
